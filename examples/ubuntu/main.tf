@@ -1,6 +1,7 @@
 locals {
   environment = "ubuntu"
-  aws_region  = "eu-west-1"
+  aws_region  = "us-west-2"
+  aws_profile = "findora-dev"
 }
 
 resource "random_id" "random" {

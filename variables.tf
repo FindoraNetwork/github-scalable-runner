@@ -1,16 +1,19 @@
 variable "aws_region" {
   description = "AWS region."
   type        = string
+  default     = "us-west-2"
 }
 
 variable "vpc_id" {
   description = "The VPC for security groups of the action runners."
   type        = string
+  default     = "vpc-1d6d3865"
 }
 
 variable "subnet_ids" {
   description = "List of subnets in which the action runners will be launched, the subnets needs to be subnets in the `vpc_id`."
   type        = list(string)
+  default     = ["subnet-7faf0907"]
 }
 
 variable "tags" {
@@ -49,6 +52,11 @@ variable "github_app" {
     id             = string
     webhook_secret = string
   })
+    default = {
+    key_base64 = "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcFFJQkFBS0NBUUVBNDE0ZnV1SlFSUWZPZHI5cVVmNVYzeTRGVitzV3IvRk5mcEgrS2F1Vm95TklpR0xYClBOeUNZVGxhNmpMLzhZZGw3M0k1NW04cGFCRmd2RWhXUlAxdmJiTkNhY1pLbDc1cVlqQjJ2cEVhV1hIbTJrbzcKSHFkRkFEMU5WUGwrRmFzcUh5S2RxUzBHT3hUTVJWWXRZSjFsMG11V3l0c3VaRG5mczRiOERoYU9NTmY0NUsyZQpXZGZwbXpGTjJ5c1RsdktxR3JhTndodjlOVnYzZmVYak43UFVYUkdDaEFPc3g0eGtlc21jZEtjaGVpWnU1WU1JCjlYbFJZNEZubWluSytPN2hoNkNJbjFyWWtCazV1SFVjQzlMQUs3b09wd3JlanU5SWtCV1BQejhRQ3FydEFiRG8KMGN6dnZKc003aFNiTTJqUzBmMGFXNkpPYktSYjBpR0VvZjYzN1FJREFRQUJBb0lCQVFESkNnVE1YaWZUb2Q5eApLRGQrWUlEVllmL2ZpVUw2TjBicVQzU0lxK3NYNEs3VnlXKy9wTXF6NU43NmpqVzQvcHVuYVR6QkFER0FqejBWCnZuQnBlQjM2eGJKSGpNbVAreEpkMTdSbk5DNDBRSDU3TFgrd3p2NDRBL3hJMG9JbDdyN0Q0UHUvQnN5bm1QQTEKcnNsWTBGT2tCdlhDVUtOb2c3UEZMZW5aR3lDSEZnV2FVMnZxZThwNzU2U3FPWFZjWmxWMzFlYzJaN2R5eEh3bAo2dVFZQ2xuZ1dqeWtOdlNqd0tUTnVRZWtubmx2YkxBNms4SEdDZ254Q0toTEMrdUtpU0YvWFlOaTBINDVRNlRjCjEvQzNMVWYrZW1RbzNnYTBSY080eVlrY0duZ3MyamMybXpTYlhGdzBPZ1k1UlF5bldUaytjOTkrZ2xSb3hwdGMKMjFDbHNXK0JBb0dCQVBIVFdFamlkYjZOVkppc1hjUDNoeXkrM2hFUjkvbUR4em50T2lueUVwOHFLU2NJTUkvbAprVWNIeUlwc3k1TExPbk5pWWdNcnArQXE4TklBa2NnblllTVNlaklCYWFsV0g5QnJ3alpXektKY1prV1lSWEJrCk1tczJETHUzSTRtNFh3UmZtVVU2Q2xGNkpjU0sxUG1UZUVpT05LUno5VmRTUk1IUnFIVURqVThGQW9HQkFQQ3gKMWFzbENhOWt5MHlkZTkzOWFkSUMwbVVQZjRySEVidDhxK1E4SmJKVlFuVWREb2xqYzJZd3V0SjE5TlhqbTM0VwpLMmxmejMrZ2ZvVEwwRm81NmEybFY4NFcyUVlMbEdCeHU5VDZBTEh5Y2x5ODFyYm9pa0ZBbWE5VmpYZFc1ZWxOCkVQK0ttOVVPQ1RzNTFMYVVzVXI4ZmtUZ0JCc1Z6UTRqWEg5OVdvbkpBb0dBSkhFSTJOTG5rM09RMEFFSmtFSjQKNkZGSy9aK0xrdG84NTRuTVBnM3dxSE9lQi9lLythOUttVDJmQnQwbVFGVEgxaU41U2FrR2YwMTVST3c1QzhTRApoOGg5Q1pRVTdDUENYNUlkampxK1U2bEE4RFBtSXUyMmUxbUZ5YlByY3hHSm9Bc1grY3FwUzJYdzB4Rm96c05lCldQQzFGaU16VVpsZ0t5VUJFY0ViUmxFQ2dZRUFsV3p4eDFReEZSQXdIaHBPd2R3SEMvZndnZ2tERnpiS3pXaHkKbGppNDltTno1SnpyWDJPOFNwN0ovTXA1K3lkWWF3aDhYdWk2T3ZONldCcm4rSHVubE1QbkpPeU9RdkNCWnZaMApzNTJaUE4vVkc3bW9XdGsycTVmZFVUcDlucTcyQU1aMVhRL0IrcHpDSW1DZXE5TFgxa08yYUMvaW5LWUdMVmJLCm4rTkVoL0VDZ1lFQTBRM1VkaGtnWWROc2ZtU0hZbS90SEJ3UWxBNWYydzcxcUpJY3Nma2tIUGcyTy9kcU9jblEKcHhlV253b1VPNzd2bW5lQm8rWmt0OTU5bG5SMDJNK1BkWEhlT2xWdkRmYndXdTFrUW1aS2ZzNjZuM2t0U0ZMcQpGTHNPa3V4UC8yTWhUVTJDUjFIM2t6eTVaRXJzWm1WK1BvNVNSVXpvcnhmdHdDaFZ0TnZzcjRRPQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo="
+    id = "204241"
+    webhook_secret = "e7497e26424b6abac991a89167f8c5a5c56c8a12"
+  }
 }
 
 variable "scale_down_schedule_expression" {
@@ -72,7 +80,7 @@ variable "runner_boot_time_in_minutes" {
 variable "runner_extra_labels" {
   description = "Extra (custom) labels for the runners (GitHub). Separate each label by a comma. Labels checks on the webhook can be enforced by setting `enable_workflow_job_labels_check`. GitHub read-only labels should not be provided."
   type        = string
-  default     = ""
+  default     = "scalable"
 }
 
 variable "runner_group_name" {
@@ -255,7 +263,7 @@ variable "block_device_mappings" {
     device_name           = "/dev/xvda"
     delete_on_termination = true
     volume_type           = "gp3"
-    volume_size           = 30
+    volume_size           = 50
     encrypted             = true
     iops                  = null
   }]
@@ -264,12 +272,14 @@ variable "block_device_mappings" {
 variable "ami_filter" {
   description = "List of maps used to create the AMI filter for the action runner AMI. By default amazon linux 2 is used."
   type        = map(list(string))
-  default     = null
+  default     = {
+			name = ["github-runner-image-6"]
+		}
 }
 variable "ami_owners" {
   description = "The list of owners used to select the AMI of action runner instances."
   type        = list(string)
-  default     = ["amazon"]
+  default     = ["358484141435"]
 }
 variable "lambda_s3_bucket" {
   description = "S3 bucket from which to specify lambda functions. This is an alternative to providing local files directly."
@@ -309,13 +319,13 @@ variable "runners_lambda_s3_object_version" {
 variable "create_service_linked_role_spot" {
   description = "(optional) create the serviced linked role for spot instances that is required by the scale-up lambda."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "runner_iam_role_managed_policy_arns" {
   description = "Attach AWS or customer-managed IAM policies (by ARN) to the runner IAM role"
   type        = list(string)
-  default     = []
+  default     = ["arn:aws:iam::358484141435:policy/push-ecr"]
 }
 
 variable "enable_cloudwatch_agent" {
@@ -368,13 +378,13 @@ variable "lambda_security_group_ids" {
 variable "key_name" {
   description = "Key pair name"
   type        = string
-  default     = null
+  default     = "ancients-findora-2020Nov"
 }
 
 variable "runner_additional_security_group_ids" {
   description = "(optional) List of additional security groups IDs to apply to the runner"
   type        = list(string)
-  default     = []
+  default     = ["sg-0abfa44718d1926b0"]
 }
 
 variable "market_options" {
@@ -428,7 +438,7 @@ variable "instance_type" {
 variable "instance_types" {
   description = "List of instance types for the action runner. Defaults are based on runner_os (amzn2 for linux and Windows Server Core for win)."
   type        = list(string)
-  default     = ["m5.large", "c5.large"]
+  default     = ["m5.12xlarge", "c5.12xlarge"]
 }
 
 variable "repository_white_list" {
